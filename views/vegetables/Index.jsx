@@ -23,6 +23,7 @@ const React = require('react');
                               );
                           })}
                       </ul>
+                      <a href = "/vegetables/new">Create a new vegetable</a>
                   </div>
           );
       }
