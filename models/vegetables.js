@@ -1,27 +1,15 @@
-const vegetables = [{
-    name:'radish',
-    color: 'red',
-    readyToEat: true
-},
-{
-    name:'zuccini',
-    color: 'green',
-    readyToEat: false
-},
-{
-    name:'cucumber',
-    color: 'green',
-    readyToEat: false
-},
-{
-    name:'bell pepper',
-    color: 'green',
-    readyToEat: false
-},
-{
-    name:'squash',
-    color: 'yellow',
-    readyToEat: true
-}];
+//Step 1. import mongoose
+const mongoose = require('mongoose');
 
-module.exports = vegetables;
+//Step 2. create schema
+const vegetableSchema = new mongoose.Schema({
+    name:  { type: String, required: true },
+    color:  { type: String, required: true },
+    readyToEat: Boolean
+});
+
+//Step 3. create model using schema
+const Vegetable = mongoose.model('Vegetable', vegetableSchema);
+
+//Step 4. Export model
+module.exports = Vegetable;
