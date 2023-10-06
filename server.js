@@ -18,6 +18,7 @@ app.set("view engine", "jsx");
 app.engine("jsx", jsxEngine());
 
 //near the top, around other app.use() calls
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 
 app.use(methodOverride('_method'));
